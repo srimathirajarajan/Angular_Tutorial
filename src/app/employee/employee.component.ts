@@ -7,22 +7,22 @@ import { EmployeeService } from './employee.service';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent {
-  employeeData: any[] = [];
+  // employeeData: any[] = [];
 
-  constructor(private empService: EmployeeService) { }
-  ngOnInit(): void {
-    this.fetchEmployee();
-  }
-  fetchEmployee() {
-    this.empService.getEmployee().subscribe(
-      //fetching your data asynchronously
-      (data) => {
-        this.employeeData = data;
-      },
-      //handle error
-      (error) => {
-        console.error('Error fetching the data' + error);
-      }
-    );
+  // constructor(private empService: EmployeeService) { }
+  // ngOnInit(): void {
+  //   this.fetchEmployee();
+  // }
+  // fetchEmployee() {
+  //   this.empService.getEmployee().subscribe(
+  //     //fetching your data asynchronously
+  //     (data) => {
+  //       this.employeeData = data;
+  //     },
+  //     //handle error
+  //     (error) => {
+  //       console.error('Error fetching the data' + error);
+  //     }
+  //   );
   }
 }
