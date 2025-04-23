@@ -1,0 +1,33 @@
+<section class="content-style"><p>Table of Content</p></section>
+<p [style.backgroundColor]="'#f0f8ff'" 
+   [style.color]="'#333'" 
+   [style.padding]="'10px'" 
+   [style.borderRadius]="'8px'"
+   [style.textAlign]="'center'">
+    {{ title }}
+</p>
+
+<div class="search-container">
+    <button (click)='clearResult()'>Clear</button>
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search by name" />
+</div>
+
+
+<div class="overall-container">
+    <table class="styled-table">
+        <thead>
+            <th>Name</th>
+            <th>email</th>
+            <th>phone</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of fetchbyfilter()">
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.role }}</td>
+                <td>{{ employee.years }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf='fetchbyfilter().length === 0'>No employee data found</p>
+</div>
+
